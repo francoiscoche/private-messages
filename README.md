@@ -21,7 +21,7 @@ App with Symfony and Docker. Made to learn.
 
 Clone the project
 ```bash
-git clone git@github.com:francoiscoche/blog-symfony.git
+git clone git@github.com:francoiscoche/private-messages.git
 ```
 
 Run docker-compose
@@ -43,14 +43,14 @@ Log into the PHP container
 docker exec -it php8-private-messages bash
 ```
 
-<!-- Run the fixtures (need to configure database into .env.local)
+Run the migrations (need to configure database into .env.local)
+```bash
+php bin/console doctrine:migrations:migrate
+```
+
+Run the fixtures 
 ```bash
 php bin/console doctrine:fixtures:load
-``` -->
-
-Run npm
-```bash
-npm run build 
 ```
 
 
