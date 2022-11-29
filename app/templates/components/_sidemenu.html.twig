@@ -1,0 +1,20 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel"><i class="fas fa-folder-open"></i> Mes dossiers</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="list-group">
+            <a href="{{ path('app_message') }}" class="list-group-item list-group-item-action active"><i class="fas fa-house-user"></i> Accueil</a>
+        </div>
+        <div class="list-group">
+            <a href="{{ path('app_received') }}" class="list-group-item list-group-item-action"><i class="fas fa-envelope"></i> Boite de récepetion</a>
+        </div>
+        <div class="list-group">
+            <a href="{{ path('app_sent') }}" class="list-group-item list-group-item-action"><i class="fas fa-paper-plane"></i> Elements envoyés</a>
+        </div>
+        <div class="list-group">
+            <a href="{{ path('app_trash') }}" class="list-group-item list-group-item-action"><i class="fas fa-trash-can"></i> Corbeille</a>
+        </div>
+    </div>
+</div>

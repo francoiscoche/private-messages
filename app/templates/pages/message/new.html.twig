@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MesssageController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<h1>Envoyer un message</h1>
+<a class="mt-4 btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+Voir mes dossiers
+</a>
+   {{form(form)}}
+</div>
+{% include "components/_sidemenu.html.twig" %}
+{% endblock %}

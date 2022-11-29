@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MesssageController!{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+<a class="mt-4 btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+Voir mes dossiers
+</a>
+    <h1 class="mt-4">{{ message.title }}</h1>
+    <p>Reçu le {{ message.createdAt | date("d/m/Y H:m:s") }}</p>
+    <p>Expediteur : {{ message.sender.email }}</p>
+
+    <div class="mt-4"> {{ message.text }}</div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MesssageController!{% endblock %}
+
+{% block body %}
+{% set counter = 0 %}
+<div class="container">
+<h1><i class="fas fa-envelope"></i> Message reçu</h1>
+<a class="mt-4 btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+Voir mes dossiers
+</a>
+<a href="{{ path('app_new') }}" class="btn btn-primary mt-4">Envoyer un message</a>
+
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success mt-4" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Expediteur</th>
+        <th scope="col">Sujet</th>
+        <th scope="col">Message</th>
+        <th scope="col">Date</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for message in app.user.received %}
+        {% if message.isRead %}
+            {% set bold = "" %}
+        {% else %}
+            {% set bold = "fw-bold" %}
+        {% endif %}
+        {% if message.trashbin != true %}
+        {%  set counter = ( counter | default(0) ) + 1 %}
+            <tr>
+                <th class="{{ bold }}">{{ message.sender.email }}</th>
+                <td class="{{ bold }}">{{ message.title |slice(0,10) ~ '...' }}</td>
+                <td class="{{ bold }}">{{ message.text |slice(0,15) ~ '...' }}</td>
+                <td class="{{ bold }}">{{ message.createdAt | date("d/m/Y H:m:s")  }}</td>
+                <td class="{{ bold }}">
+                    <a class="btn btn-primary" href="{{ path('app_read', { id : message.id }) }}">Lire</a>
+                    <a class="btn btn-primary" href="{{ path('app_delete', { id : message.id }) }}">Delete</a>
+                </td>
+            </tr>  
+        {% endif %} 
+    {% endfor %}
+    <p class="mt-4">Vous avez reçu {{ counter }} messages</p>
+    </tbody>
+    </table>
+
+
+
+</div>
+{% endblock %}

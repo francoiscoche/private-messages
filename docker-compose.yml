@@ -8,8 +8,8 @@ services:
           - "8000:8000"
       volumes:
           - ./:/var/www
-          # - /var/www/vendor
-          # - /var/www/var
+          - /var/www/app/vendor
+          - /var/www/app/var
       networks:
       - dev
   db:
