@@ -3,7 +3,7 @@ App with Symfony and Docker. Made to learn.
 
 <br>
 
-*Developpement in progress ...*
+ <img src="https://user-images.githubusercontent.com/102531037/204605571-bebf1060-4c44-4fa3-b615-f18f5d16d5bc.gif" width="600"/>
 
 
 
@@ -57,9 +57,7 @@ php bin/console doctrine:fixtures:load
 *The application is available at http://127.0.0.1:8000*
 
 <br><br>
-
-
-
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/102531037/204749936-5fac3903-1736-48f6-b927-d2250bfdbc64.png">
 
 
 ### Author
