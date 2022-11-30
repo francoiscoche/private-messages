@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use App\Entity\Messages;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -26,14 +27,14 @@ class MessageType extends AbstractType
                     'class' => 'mt-4'
                 ]
             ])
-            ->add('text', TextareaType::class, [
-                'attr' => [
-                    'class' => 'form-control'
-                ],
-                'label_attr' => [
-                    'class' => 'mt-4'
-                ]
-            ])
+            // ->add('text', TextareaType::class, [
+            //     'attr' => [
+            //         'class' => 'form-control'
+            //     ],
+            //     'label_attr' => [
+            //         'class' => 'mt-4'
+            //     ]
+            // ])
             ->add('recipient', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => "email",
@@ -43,6 +44,12 @@ class MessageType extends AbstractType
                 'label_attr' => [
                     'class' => 'mt-4'
                 ]
+            ])
+            ->add('text', CKEditorType::class, [
+                'config' => array(
+                    'uiColor' => '#ffffff',
+                    //...
+                ),
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [

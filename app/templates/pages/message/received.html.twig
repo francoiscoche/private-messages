@@ -39,7 +39,7 @@ Voir mes dossiers
             <tr>
                 <th class="{{ bold }}">{{ message.sender.email }}</th>
                 <td class="{{ bold }}">{{ message.title |slice(0,10) ~ '...' }}</td>
-                <td class="{{ bold }}">{{ message.text |slice(0,15) ~ '...' }}</td>
+                <td class="{{ bold }}">{{ message.text|raw|slice(0,15) ~ '...'}}</td>
                 <td class="{{ bold }}">{{ message.createdAt | date("d/m/Y H:m:s")  }}</td>
                 <td class="{{ bold }}">
                     <a class="btn btn-primary" href="{{ path('app_read', { id : message.id }) }}">Lire</a>
