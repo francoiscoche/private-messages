@@ -57,6 +57,7 @@ php bin/console doctrine:fixtures:load
 *The application is available at http://127.0.0.1:8000*
 
 <br><br>
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/102531037/204749936-5fac3903-1736-48f6-b927-d2250bfdbc64.png">
 
 
 ### Author
